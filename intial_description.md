@@ -18,8 +18,15 @@
            - main.py: 앱 시작 시 JSON 로드, PRODUCING 주문으로 ProductionQueue 재구성
            - 단위 테스트: 78개, 커버리지 100%
            - pytest.ini addopts: --cov-report=html 로 htmlcov/ 자동 산출
-      3. 데이터 모니터링 Tool: 현재 저장된 데이터 상태를 콘솔에서 실시간 조회할 수 있는 관리자 도구
+      3. 데이터 모니터링 Tool: 현재 저장된 데이터 상태를 콘솔에서 실시간 조회할 수 있는 관리자 도구 ✅
          - git repository: https://github.com/JongtaeBaek/DataMonitor-JongtaeBaek-18028041.git
+         - 완료 내용
+           - monitor/data_monitor.py: DataMonitor 클래스 (시료 현황/주문 현황/재고 현황/전체 조회)
+           - model/, repository/: 1.1.2와 동일한 코드 이식 (read-only 운용)
+           - main.py: 메뉴 루프 진입점 (standalone 툴)
+           - 재고 상태 분류: 여유(stock >= 활성 주문량) / 부족(0 < stock < 활성 주문량) / 고갈(stock == 0)
+           - 단위 테스트: 24개, 커버리지 100%
+           - pytest.ini addopts: --cov-report=html 로 htmlcov/ 자동 산출
       4. Dummy 데이터 생성 Tool: Test를 위한 Dummy Data를 생성하는 도구, Dummy Data는 연결된 DB에 추가
          - git repository: https://github.com/JongtaeBaek/DummyDataGenerator-JongtaeBaek-18028041.git
    2. 프로젝트 개발
